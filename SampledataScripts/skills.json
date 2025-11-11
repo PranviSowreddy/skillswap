@@ -1,0 +1,1782 @@
+[
+    {
+        "skillId": 1,
+        "name": "Python"
+    },
+    {
+        "skillId": 2,
+        "name": "Java"
+    },
+    {
+        "skillId": 3,
+        "name": "C"
+    },
+    {
+        "skillId": 4,
+        "name": "C++"
+    },
+    {
+        "skillId": 5,
+        "name": "C#"
+    },
+    {
+        "skillId": 6,
+        "name": "HTML"
+    },
+    {
+        "skillId": 7,
+        "name": "CSS"
+    },
+    {
+        "skillId": 8,
+        "name": "JavaScript"
+    },
+    {
+        "skillId": 9,
+        "name": "TypeScript"
+    },
+    {
+        "skillId": 10,
+        "name": "React"
+    },
+    {
+        "skillId": 11,
+        "name": "Node.js"
+    },
+    {
+        "skillId": 12,
+        "name": "Angular"
+    },
+    {
+        "skillId": 13,
+        "name": "Vue.js"
+    },
+    {
+        "skillId": 14,
+        "name": "Next.js"
+    },
+    {
+        "skillId": 15,
+        "name": "Express.js"
+    },
+    {
+        "skillId": 16,
+        "name": "Django"
+    },
+    {
+        "skillId": 17,
+        "name": "Flask"
+    },
+    {
+        "skillId": 18,
+        "name": "Spring Boot"
+    },
+    {
+        "skillId": 19,
+        "name": "PHP"
+    },
+    {
+        "skillId": 20,
+        "name": "Laravel"
+    },
+    {
+        "skillId": 21,
+        "name": "Ruby on Rails"
+    },
+    {
+        "skillId": 22,
+        "name": "Kotlin"
+    },
+    {
+        "skillId": 23,
+        "name": "Swift"
+    },
+    {
+        "skillId": 24,
+        "name": "Go"
+    },
+    {
+        "skillId": 25,
+        "name": "R Programming"
+    },
+    {
+        "skillId": 26,
+        "name": "SQL"
+    },
+    {
+        "skillId": 27,
+        "name": "MySQL"
+    },
+    {
+        "skillId": 28,
+        "name": "MongoDB"
+    },
+    {
+        "skillId": 29,
+        "name": "Firebase"
+    },
+    {
+        "skillId": 30,
+        "name": "PostgreSQL"
+    },
+    {
+        "skillId": 31,
+        "name": "REST API Development"
+    },
+    {
+        "skillId": 32,
+        "name": "GraphQL"
+    },
+    {
+        "skillId": 33,
+        "name": "Android App Development"
+    },
+    {
+        "skillId": 34,
+        "name": "iOS App Development"
+    },
+    {
+        "skillId": 35,
+        "name": "Full Stack Development"
+    },
+    {
+        "skillId": 36,
+        "name": "Frontend Development"
+    },
+    {
+        "skillId": 37,
+        "name": "Backend Development"
+    },
+    {
+        "skillId": 38,
+        "name": "UI/UX Design"
+    },
+    {
+        "skillId": 39,
+        "name": "Figma"
+    },
+    {
+        "skillId": 40,
+        "name": "Adobe XD"
+    },
+    {
+        "skillId": 41,
+        "name": "Web Design"
+    },
+    {
+        "skillId": 42,
+        "name": "Responsive Design"
+    },
+    {
+        "skillId": 43,
+        "name": "Accessibility Design"
+    },
+    {
+        "skillId": 44,
+        "name": "Game Development"
+    },
+    {
+        "skillId": 45,
+        "name": "Unity"
+    },
+    {
+        "skillId": 46,
+        "name": "Unreal Engine"
+    },
+    {
+        "skillId": 47,
+        "name": "AR/VR Development"
+    },
+    {
+        "skillId": 48,
+        "name": "AI (Artificial Intelligence)"
+    },
+    {
+        "skillId": 49,
+        "name": "Machine Learning"
+    },
+    {
+        "skillId": 50,
+        "name": "Deep Learning"
+    },
+    {
+        "skillId": 51,
+        "name": "Natural Language Processing"
+    },
+    {
+        "skillId": 52,
+        "name": "Data Science"
+    },
+    {
+        "skillId": 53,
+        "name": "Data Analysis"
+    },
+    {
+        "skillId": 54,
+        "name": "Data Visualization"
+    },
+    {
+        "skillId": 55,
+        "name": "Power BI"
+    },
+    {
+        "skillId": 56,
+        "name": "Tableau"
+    },
+    {
+        "skillId": 57,
+        "name": "Big Data Analytics"
+    },
+    {
+        "skillId": 58,
+        "name": "Excel Advanced"
+    },
+    {
+        "skillId": 59,
+        "name": "Cloud Computing"
+    },
+    {
+        "skillId": 60,
+        "name": "AWS"
+    },
+    {
+        "skillId": 61,
+        "name": "Google Cloud"
+    },
+    {
+        "skillId": 62,
+        "name": "Microsoft Azure"
+    },
+    {
+        "skillId": 63,
+        "name": "Docker"
+    },
+    {
+        "skillId": 64,
+        "name": "Kubernetes"
+    },
+    {
+        "skillId": 65,
+        "name": "DevOps"
+    },
+    {
+        "skillId": 66,
+        "name": "Linux"
+    },
+    {
+        "skillId": 67,
+        "name": "Bash Scripting"
+    },
+    {
+        "skillId": 68,
+        "name": "Version Control (Git/GitHub)"
+    },
+    {
+        "skillId": 69,
+        "name": "Cybersecurity"
+    },
+    {
+        "skillId": 70,
+        "name": "Ethical Hacking"
+    },
+    {
+        "skillId": 71,
+        "name": "Penetration Testing"
+    },
+    {
+        "skillId": 72,
+        "name": "Network Security"
+    },
+    {
+        "skillId": 73,
+        "name": "Blockchain"
+    },
+    {
+        "skillId": 74,
+        "name": "Solidity"
+    },
+    {
+        "skillId": 75,
+        "name": "Cryptocurrency Basics"
+    },
+    {
+        "skillId": 76,
+        "name": "Web3 Development"
+    },
+    {
+        "skillId": 77,
+        "name": "Computer Networks"
+    },
+    {
+        "skillId": 78,
+        "name": "Operating Systems"
+    },
+    {
+        "skillId": 79,
+        "name": "DBMS"
+    },
+    {
+        "skillId": 80,
+        "name": "Software Testing"
+    },
+    {
+        "skillId": 81,
+        "name": "Automation Testing"
+    },
+    {
+        "skillId": 82,
+        "name": "Agile Methodologies"
+    },
+    {
+        "skillId": 83,
+        "name": "Scrum"
+    },
+    {
+        "skillId": 84,
+        "name": "System Design"
+    },
+    {
+        "skillId": 85,
+        "name": "OOP Concepts"
+    },
+    {
+        "skillId": 86,
+        "name": "Algorithms"
+    },
+    {
+        "skillId": 87,
+        "name": "Data Structures"
+    },
+    {
+        "skillId": 88,
+        "name": "Competitive Programming"
+    },
+    {
+        "skillId": 89,
+        "name": "Problem Solving"
+    },
+    {
+        "skillId": 90,
+        "name": "Research Writing"
+    },
+    {
+        "skillId": 91,
+        "name": "Technical Writing"
+    },
+    {
+        "skillId": 92,
+        "name": "Critical Thinking"
+    },
+    {
+        "skillId": 93,
+        "name": "Analytical Reasoning"
+    },
+    {
+        "skillId": 94,
+        "name": "Statistics"
+    },
+    {
+        "skillId": 95,
+        "name": "Mathematics"
+    },
+    {
+        "skillId": 96,
+        "name": "Physics"
+    },
+    {
+        "skillId": 97,
+        "name": "Chemistry"
+    },
+    {
+        "skillId": 98,
+        "name": "Biology"
+    },
+    {
+        "skillId": 99,
+        "name": "Engineering Drawing"
+    },
+    {
+        "skillId": 100,
+        "name": "Electronics Basics"
+    },
+    {
+        "skillId": 101,
+        "name": "Electrical Circuits"
+    },
+    {
+        "skillId": 102,
+        "name": "Robotics"
+    },
+    {
+        "skillId": 103,
+        "name": "IoT (Internet of Things)"
+    },
+    {
+        "skillId": 104,
+        "name": "Embedded Systems"
+    },
+    {
+        "skillId": 105,
+        "name": "Arduino Programming"
+    },
+    {
+        "skillId": 106,
+        "name": "Raspberry Pi Projects"
+    },
+    {
+        "skillId": 107,
+        "name": "VLSI Basics"
+    },
+    {
+        "skillId": 108,
+        "name": "Control Systems"
+    },
+    {
+        "skillId": 109,
+        "name": "Signal Processing"
+    },
+    {
+        "skillId": 110,
+        "name": "MATLAB"
+    },
+    {
+        "skillId": 111,
+        "name": "Simulation Tools"
+    },
+    {
+        "skillId": 112,
+        "name": "3D Printing"
+    },
+    {
+        "skillId": 113,
+        "name": "Mechanical CAD"
+    },
+    {
+        "skillId": 114,
+        "name": "AutoCAD"
+    },
+    {
+        "skillId": 115,
+        "name": "SolidWorks"
+    },
+    {
+        "skillId": 116,
+        "name": "CATIA"
+    },
+    {
+        "skillId": 117,
+        "name": "Civil Drawing"
+    },
+    {
+        "skillId": 118,
+        "name": "Structural Design"
+    },
+    {
+        "skillId": 119,
+        "name": "Thermodynamics"
+    },
+    {
+        "skillId": 120,
+        "name": "Material Science"
+    },
+    {
+        "skillId": 121,
+        "name": "Renewable Energy"
+    },
+    {
+        "skillId": 122,
+        "name": "Power Systems"
+    },
+    {
+        "skillId": 123,
+        "name": "Aerospace Fundamentals"
+    },
+    {
+        "skillId": 124,
+        "name": "Design Thinking"
+    },
+    {
+        "skillId": 125,
+        "name": "Project Management"
+    },
+    {
+        "skillId": 126,
+        "name": "Business Strategy"
+    },
+    {
+        "skillId": 127,
+        "name": "Entrepreneurship"
+    },
+    {
+        "skillId": 128,
+        "name": "Startup Pitching"
+    },
+    {
+        "skillId": 129,
+        "name": "Financial Literacy"
+    },
+    {
+        "skillId": 130,
+        "name": "Accounting"
+    },
+    {
+        "skillId": 131,
+        "name": "Economics"
+    },
+    {
+        "skillId": 132,
+        "name": "Investment Basics"
+    },
+    {
+        "skillId": 133,
+        "name": "Stock Market Trading"
+    },
+    {
+        "skillId": 134,
+        "name": "Cryptocurrency Trading"
+    },
+    {
+        "skillId": 135,
+        "name": "Budgeting"
+    },
+    {
+        "skillId": 136,
+        "name": "Taxation"
+    },
+    {
+        "skillId": 137,
+        "name": "Sales"
+    },
+    {
+        "skillId": 138,
+        "name": "Marketing"
+    },
+    {
+        "skillId": 139,
+        "name": "Digital Marketing"
+    },
+    {
+        "skillId": 140,
+        "name": "SEO"
+    },
+    {
+        "skillId": 141,
+        "name": "SEM"
+    },
+    {
+        "skillId": 142,
+        "name": "Social Media Marketing"
+    },
+    {
+        "skillId": 143,
+        "name": "Affiliate Marketing"
+    },
+    {
+        "skillId": 144,
+        "name": "Email Marketing"
+    },
+    {
+        "skillId": 145,
+        "name": "Content Marketing"
+    },
+    {
+        "skillId": 146,
+        "name": "Copywriting"
+    },
+    {
+        "skillId": 147,
+        "name": "Product Management"
+    },
+    {
+        "skillId": 148,
+        "name": "Operations Management"
+    },
+    {
+        "skillId": 149,
+        "name": "Supply Chain Management"
+    },
+    {
+        "skillId": 150,
+        "name": "Customer Relationship Management"
+    },
+    {
+        "skillId": 151,
+        "name": "Negotiation Skills"
+    },
+    {
+        "skillId": 152,
+        "name": "Leadership"
+    },
+    {
+        "skillId": 153,
+        "name": "Teamwork"
+    },
+    {
+        "skillId": 154,
+        "name": "Decision Making"
+    },
+    {
+        "skillId": 155,
+        "name": "Time Management"
+    },
+    {
+        "skillId": 156,
+        "name": "Stress Management"
+    },
+    {
+        "skillId": 157,
+        "name": "Confidence Building"
+    },
+    {
+        "skillId": 158,
+        "name": "Goal Setting"
+    },
+    {
+        "skillId": 159,
+        "name": "Public Speaking"
+    },
+    {
+        "skillId": 160,
+        "name": "Presentation Skills"
+    },
+    {
+        "skillId": 161,
+        "name": "Interview Preparation"
+    },
+    {
+        "skillId": 162,
+        "name": "Resume Writing"
+    },
+    {
+        "skillId": 163,
+        "name": "Cover Letter Writing"
+    },
+    {
+        "skillId": 164,
+        "name": "Career Planning"
+    },
+    {
+        "skillId": 165,
+        "name": "LinkedIn Optimization"
+    },
+    {
+        "skillId": 166,
+        "name": "Portfolio Building"
+    },
+    {
+        "skillId": 167,
+        "name": "Networking Skills"
+    },
+    {
+        "skillId": 168,
+        "name": "Mentoring"
+    },
+    {
+        "skillId": 169,
+        "name": "Teaching"
+    },
+    {
+        "skillId": 170,
+        "name": "Coaching"
+    },
+    {
+        "skillId": 171,
+        "name": "Professional Communication"
+    },
+    {
+        "skillId": 172,
+        "name": "Email Etiquette"
+    },
+    {
+        "skillId": 173,
+        "name": "Listening Skills"
+    },
+    {
+        "skillId": 174,
+        "name": "Empathy"
+    },
+    {
+        "skillId": 175,
+        "name": "Adaptability"
+    },
+    {
+        "skillId": 176,
+        "name": "Conflict Resolution"
+    },
+    {
+        "skillId": 177,
+        "name": "Work Ethics"
+    },
+    {
+        "skillId": 178,
+        "name": "Creativity"
+    },
+    {
+        "skillId": 179,
+        "name": "Innovation"
+    },
+    {
+        "skillId": 180,
+        "name": "Problem Solving"
+    },
+    {
+        "skillId": 181,
+        "name": "Analytical Thinking"
+    },
+    {
+        "skillId": 182,
+        "name": "Persuasive Speaking"
+    },
+    {
+        "skillId": 183,
+        "name": "Negotiation"
+    },
+    {
+        "skillId": 184,
+        "name": "Cultural Awareness"
+    },
+    {
+        "skillId": 185,
+        "name": "Event Planning"
+    },
+    {
+        "skillId": 186,
+        "name": "Fundraising"
+    },
+    {
+        "skillId": 187,
+        "name": "Community Volunteering"
+    },
+    {
+        "skillId": 188,
+        "name": "Sustainability"
+    },
+    {
+        "skillId": 189,
+        "name": "Environmental Awareness"
+    },
+    {
+        "skillId": 190,
+        "name": "Waste Management"
+    },
+    {
+        "skillId": 191,
+        "name": "Public Service"
+    },
+    {
+        "skillId": 192,
+        "name": "Nonprofit Management"
+    },
+    {
+        "skillId": 193,
+        "name": "First Aid"
+    },
+    {
+        "skillId": 194,
+        "name": "Driving"
+    },
+    {
+        "skillId": 195,
+        "name": "Cooking"
+    },
+    {
+        "skillId": 196,
+        "name": "Baking"
+    },
+    {
+        "skillId": 197,
+        "name": "Nutrition"
+    },
+    {
+        "skillId": 198,
+        "name": "Meal Planning"
+    },
+    {
+        "skillId": 199,
+        "name": "Healthy Cooking"
+    },
+    {
+        "skillId": 200,
+        "name": "Home Management"
+    },
+    {
+        "skillId": 201,
+        "name": "Gardening"
+    },
+    {
+        "skillId": 202,
+        "name": "Pet Care"
+    },
+    {
+        "skillId": 203,
+        "name": "Sewing"
+    },
+    {
+        "skillId": 204,
+        "name": "Knitting"
+    },
+    {
+        "skillId": 205,
+        "name": "Embroidery"
+    },
+    {
+        "skillId": 206,
+        "name": "Origami"
+    },
+    {
+        "skillId": 207,
+        "name": "DIY Crafts"
+    },
+    {
+        "skillId": 208,
+        "name": "Calligraphy"
+    },
+    {
+        "skillId": 209,
+        "name": "Painting"
+    },
+    {
+        "skillId": 210,
+        "name": "Drawing"
+    },
+    {
+        "skillId": 211,
+        "name": "Sketching"
+    },
+    {
+        "skillId": 212,
+        "name": "Watercolor Painting"
+    },
+    {
+        "skillId": 213,
+        "name": "Acrylic Painting"
+    },
+    {
+        "skillId": 214,
+        "name": "Digital Art"
+    },
+    {
+        "skillId": 215,
+        "name": "Graphic Design"
+    },
+    {
+        "skillId": 216,
+        "name": "Logo Design"
+    },
+    {
+        "skillId": 217,
+        "name": "Poster Design"
+    },
+    {
+        "skillId": 218,
+        "name": "Infographics"
+    },
+    {
+        "skillId": 219,
+        "name": "Adobe Photoshop"
+    },
+    {
+        "skillId": 220,
+        "name": "Illustrator"
+    },
+    {
+        "skillId": 221,
+        "name": "Canva Design"
+    },
+    {
+        "skillId": 222,
+        "name": "Video Editing"
+    },
+    {
+        "skillId": 223,
+        "name": "Film Making"
+    },
+    {
+        "skillId": 224,
+        "name": "Cinematography"
+    },
+    {
+        "skillId": 225,
+        "name": "Storyboarding"
+    },
+    {
+        "skillId": 226,
+        "name": "Animation"
+    },
+    {
+        "skillId": 227,
+        "name": "2D Animation"
+    },
+    {
+        "skillId": 228,
+        "name": "3D Animation"
+    },
+    {
+        "skillId": 229,
+        "name": "Motion Graphics"
+    },
+    {
+        "skillId": 230,
+        "name": "Sound Design"
+    },
+    {
+        "skillId": 231,
+        "name": "Podcasting"
+    },
+    {
+        "skillId": 232,
+        "name": "Voice Acting"
+    },
+    {
+        "skillId": 233,
+        "name": "Photography"
+    },
+    {
+        "skillId": 234,
+        "name": "Photo Editing"
+    },
+    {
+        "skillId": 235,
+        "name": "Lightroom"
+    },
+    {
+        "skillId": 236,
+        "name": "Videography"
+    },
+    {
+        "skillId": 237,
+        "name": "Video Production"
+    },
+    {
+        "skillId": 238,
+        "name": "YouTube Management"
+    },
+    {
+        "skillId": 239,
+        "name": "Vlogging"
+    },
+    {
+        "skillId": 240,
+        "name": "Content Creation"
+    },
+    {
+        "skillId": 241,
+        "name": "Script Writing"
+    },
+    {
+        "skillId": 242,
+        "name": "Story Writing"
+    },
+    {
+        "skillId": 243,
+        "name": "Creative Writing"
+    },
+    {
+        "skillId": 244,
+        "name": "Poetry"
+    },
+    {
+        "skillId": 245,
+        "name": "Novel Writing"
+    },
+    {
+        "skillId": 246,
+        "name": "Screenwriting"
+    },
+    {
+        "skillId": 247,
+        "name": "Playwriting"
+    },
+    {
+        "skillId": 248,
+        "name": "Music Theory"
+    },
+    {
+        "skillId": 249,
+        "name": "Guitar"
+    },
+    {
+        "skillId": 250,
+        "name": "Piano"
+    },
+    {
+        "skillId": 251,
+        "name": "Keyboard"
+    },
+    {
+        "skillId": 252,
+        "name": "Drums"
+    },
+    {
+        "skillId": 253,
+        "name": "Violin"
+    },
+    {
+        "skillId": 254,
+        "name": "Ukulele"
+    },
+    {
+        "skillId": 255,
+        "name": "Flute"
+    },
+    {
+        "skillId": 256,
+        "name": "Singing"
+    },
+    {
+        "skillId": 257,
+        "name": "Vocal Training"
+    },
+    {
+        "skillId": 258,
+        "name": "Songwriting"
+    },
+    {
+        "skillId": 259,
+        "name": "Music Production"
+    },
+    {
+        "skillId": 260,
+        "name": "DJ Mixing"
+    },
+    {
+        "skillId": 261,
+        "name": "Sound Editing"
+    },
+    {
+        "skillId": 262,
+        "name": "Music Composition"
+    },
+    {
+        "skillId": 263,
+        "name": "Dance"
+    },
+    {
+        "skillId": 264,
+        "name": "Zumba"
+    },
+    {
+        "skillId": 265,
+        "name": "Bharatanatyam"
+    },
+    {
+        "skillId": 266,
+        "name": "Hip Hop"
+    },
+    {
+        "skillId": 267,
+        "name": "Classical Dance"
+    },
+    {
+        "skillId": 268,
+        "name": "Contemporary Dance"
+    },
+    {
+        "skillId": 269,
+        "name": "Folk Dance"
+    },
+    {
+        "skillId": 270,
+        "name": "Choreography"
+    },
+    {
+        "skillId": 271,
+        "name": "Yoga"
+    },
+    {
+        "skillId": 272,
+        "name": "Meditation"
+    },
+    {
+        "skillId": 273,
+        "name": "Mindfulness"
+    },
+    {
+        "skillId": 274,
+        "name": "Pilates"
+    },
+    {
+        "skillId": 275,
+        "name": "Gym Workouts"
+    },
+    {
+        "skillId": 276,
+        "name": "Bodyweight Training"
+    },
+    {
+        "skillId": 277,
+        "name": "Martial Arts"
+    },
+    {
+        "skillId": 278,
+        "name": "Karate"
+    },
+    {
+        "skillId": 279,
+        "name": "Taekwondo"
+    },
+    {
+        "skillId": 280,
+        "name": "Self Defense"
+    },
+    {
+        "skillId": 281,
+        "name": "Sports Training"
+    },
+    {
+        "skillId": 282,
+        "name": "Cricket"
+    },
+    {
+        "skillId": 283,
+        "name": "Football"
+    },
+    {
+        "skillId": 284,
+        "name": "Badminton"
+    },
+    {
+        "skillId": 285,
+        "name": "Table Tennis"
+    },
+    {
+        "skillId": 286,
+        "name": "Basketball"
+    },
+    {
+        "skillId": 287,
+        "name": "Tennis"
+    },
+    {
+        "skillId": 288,
+        "name": "Volleyball"
+    },
+    {
+        "skillId": 289,
+        "name": "Swimming"
+    },
+    {
+        "skillId": 290,
+        "name": "Running"
+    },
+    {
+        "skillId": 291,
+        "name": "Cycling"
+    },
+    {
+        "skillId": 292,
+        "name": "Hiking"
+    },
+    {
+        "skillId": 293,
+        "name": "Fitness Coaching"
+    },
+    {
+        "skillId": 294,
+        "name": "Wellness Coaching"
+    },
+    {
+        "skillId": 295,
+        "name": "Public Health Basics"
+    },
+    {
+        "skillId": 296,
+        "name": "Mental Health Awareness"
+    },
+    {
+        "skillId": 297,
+        "name": "First Aid Training"
+    },
+    {
+        "skillId": 298,
+        "name": "Time Management"
+    },
+    {
+        "skillId": 299,
+        "name": "Study Techniques"
+    },
+    {
+        "skillId": 300,
+        "name": "Exam Preparation"
+    },
+    {
+        "skillId": 301,
+        "name": "Speed Reading"
+    },
+    {
+        "skillId": 302,
+        "name": "Memory Improvement"
+    },
+    {
+        "skillId": 303,
+        "name": "Focus Techniques"
+    },
+    {
+        "skillId": 304,
+        "name": "Mind Mapping"
+    },
+    {
+        "skillId": 305,
+        "name": "Note Taking"
+    },
+    {
+        "skillId": 306,
+        "name": "Research Skills"
+    },
+    {
+        "skillId": 307,
+        "name": "Academic Writing"
+    },
+    {
+        "skillId": 308,
+        "name": "Presentation Design"
+    },
+    {
+        "skillId": 309,
+        "name": "Problem Solving in Math"
+    },
+    {
+        "skillId": 310,
+        "name": "Analytical Reasoning"
+    },
+    {
+        "skillId": 311,
+        "name": "Quantitative Aptitude"
+    },
+    {
+        "skillId": 312,
+        "name": "Verbal Aptitude"
+    },
+    {
+        "skillId": 313,
+        "name": "Reasoning Skills"
+    },
+    {
+        "skillId": 314,
+        "name": "Critical Analysis"
+    },
+    {
+        "skillId": 315,
+        "name": "Scientific Research"
+    },
+    {
+        "skillId": 316,
+        "name": "SPSS"
+    },
+    {
+        "skillId": 317,
+        "name": "Data Interpretation"
+    },
+    {
+        "skillId": 318,
+        "name": "Report Writing"
+    },
+    {
+        "skillId": 319,
+        "name": "Project Documentation"
+    },
+    {
+        "skillId": 320,
+        "name": "Survey Design"
+    },
+    {
+        "skillId": 321,
+        "name": "Grant Writing"
+    },
+    {
+        "skillId": 322,
+        "name": "Poster Design"
+    },
+    {
+        "skillId": 323,
+        "name": "LaTeX"
+    },
+    {
+        "skillId": 324,
+        "name": "Statistics Using R"
+    },
+    {
+        "skillId": 325,
+        "name": "Excel Analysis"
+    },
+    {
+        "skillId": 326,
+        "name": "Presentation Making"
+    },
+    {
+        "skillId": 327,
+        "name": "Public Speaking in English"
+    },
+    {
+        "skillId": 328,
+        "name": "Grammar Improvement"
+    },
+    {
+        "skillId": 329,
+        "name": "English Communication"
+    },
+    {
+        "skillId": 330,
+        "name": "Business English"
+    },
+    {
+        "skillId": 331,
+        "name": "Email Writing"
+    },
+    {
+        "skillId": 332,
+        "name": "Professional Writing"
+    },
+    {
+        "skillId": 333,
+        "name": "Debating"
+    },
+    {
+        "skillId": 334,
+        "name": "Creative Communication"
+    },
+    {
+        "skillId": 335,
+        "name": "Body Language"
+    },
+    {
+        "skillId": 336,
+        "name": "Accent Training"
+    },
+    {
+        "skillId": 337,
+        "name": "French"
+    },
+    {
+        "skillId": 338,
+        "name": "German"
+    },
+    {
+        "skillId": 339,
+        "name": "Spanish"
+    },
+    {
+        "skillId": 340,
+        "name": "Japanese"
+    },
+    {
+        "skillId": 341,
+        "name": "Korean"
+    },
+    {
+        "skillId": 342,
+        "name": "Chinese (Mandarin)"
+    },
+    {
+        "skillId": 343,
+        "name": "Italian"
+    },
+    {
+        "skillId": 344,
+        "name": "Arabic"
+    },
+    {
+        "skillId": 345,
+        "name": "Portuguese"
+    },
+    {
+        "skillId": 346,
+        "name": "Russian"
+    },
+    {
+        "skillId": 347,
+        "name": "Hindi"
+    },
+    {
+        "skillId": 348,
+        "name": "Telugu"
+    },
+    {
+        "skillId": 349,
+        "name": "Tamil"
+    },
+    {
+        "skillId": 350,
+        "name": "Kannada"
+    },
+    {
+        "skillId": 351,
+        "name": "Malayalam"
+    },
+    {
+        "skillId": 352,
+        "name": "Bengali"
+    },
+    {
+        "skillId": 353,
+        "name": "Marathi"
+    },
+    {
+        "skillId": 354,
+        "name": "Gujarati"
+    },
+    {
+        "skillId": 355,
+        "name": "Sign Language"
+    },
+    {
+        "skillId": 356,
+        "name": "Public Relations"
+    },
+    {
+        "skillId": 357,
+        "name": "Event Hosting"
+    },
+    {
+        "skillId": 358,
+        "name": "Emceeing"
+    },
+    {
+        "skillId": 359,
+        "name": "Stage Presence"
+    },
+    {
+        "skillId": 360,
+        "name": "Customer Service"
+    },
+    {
+        "skillId": 361,
+        "name": "Hospitality Management"
+    },
+    {
+        "skillId": 362,
+        "name": "Hotel Management"
+    },
+    {
+        "skillId": 363,
+        "name": "Tourism Management"
+    },
+    {
+        "skillId": 364,
+        "name": "Travel Planning"
+    },
+    {
+        "skillId": 365,
+        "name": "Content Marketing"
+    },
+    {
+        "skillId": 366,
+        "name": "Social Media Content Creation"
+    },
+    {
+        "skillId": 367,
+        "name": "Personal Branding"
+    },
+    {
+        "skillId": 368,
+        "name": "Influencer Marketing"
+    },
+    {
+        "skillId": 369,
+        "name": "Negotiation & Persuasion"
+    },
+    {
+        "skillId": 370,
+        "name": "Leadership Development"
+    },
+    {
+        "skillId": 371,
+        "name": "Coaching Skills"
+    },
+    {
+        "skillId": 372,
+        "name": "Mentorship Skills"
+    },
+    {
+        "skillId": 373,
+        "name": "Workplace Communication"
+    },
+    {
+        "skillId": 374,
+        "name": "Remote Collaboration Tools"
+    },
+    {
+        "skillId": 375,
+        "name": "Google Workspace"
+    },
+    {
+        "skillId": 376,
+        "name": "Microsoft Office"
+    },
+    {
+        "skillId": 377,
+        "name": "Excel"
+    },
+    {
+        "skillId": 378,
+        "name": "PowerPoint"
+    },
+    {
+        "skillId": 379,
+        "name": "Word"
+    },
+    {
+        "skillId": 380,
+        "name": "Trello"
+    },
+    {
+        "skillId": 381,
+        "name": "Slack"
+    },
+    {
+        "skillId": 382,
+        "name": "Zoom"
+    },
+    {
+        "skillId": 383,
+        "name": "Asana"
+    },
+    {
+        "skillId": 384,
+        "name": "Notion"
+    },
+    {
+        "skillId": 385,
+        "name": "Miro"
+    },
+    {
+        "skillId": 386,
+        "name": "Jira"
+    },
+    {
+        "skillId": 387,
+        "name": "Career Counselling"
+    },
+    {
+        "skillId": 388,
+        "name": "Personality Development"
+    },
+    {
+        "skillId": 389,
+        "name": "Professional Networking"
+    },
+    {
+        "skillId": 390,
+        "name": "Ethics at Work"
+    },
+    {
+        "skillId": 391,
+        "name": "Cultural Intelligence"
+    },
+    {
+        "skillId": 392,
+        "name": "Global Awareness"
+    },
+    {
+        "skillId": 393,
+        "name": "Entrepreneurship"
+    },
+    {
+        "skillId": 394,
+        "name": "Startup Funding"
+    },
+    {
+        "skillId": 395,
+        "name": "Design Thinking"
+    },
+    {
+        "skillId": 396,
+        "name": "Business Planning"
+    },
+    {
+        "skillId": 397,
+        "name": "Pitching Ideas"
+    },
+    {
+        "skillId": 398,
+        "name": "Financial Planning"
+    },
+    {
+        "skillId": 399,
+        "name": "Marketing Analytics"
+    },
+    {
+        "skillId": 400,
+        "name": "Customer Engagement"
+    },
+    {
+        "skillId": 401,
+        "name": "UI Animation"
+    },
+    {
+        "skillId": 402,
+        "name": "Prototyping"
+    },
+    {
+        "skillId": 403,
+        "name": "Wireframing"
+    },
+    {
+        "skillId": 404,
+        "name": "Gamification Basics"
+    },
+    {
+        "skillId": 405,
+        "name": "User Research"
+    },
+    {
+        "skillId": 406,
+        "name": "Feedback Analysis"
+    },
+    {
+        "skillId": 407,
+        "name": "A/B Testing"
+    },
+    {
+        "skillId": 408,
+        "name": "Digital Advertising"
+    },
+    {
+        "skillId": 409,
+        "name": "Influencer Outreach"
+    },
+    {
+        "skillId": 410,
+        "name": "Social Media Analytics"
+    },
+    {
+        "skillId": 411,
+        "name": "Email Campaign Design"
+    },
+    {
+        "skillId": 412,
+        "name": "Blog Writing"
+    },
+    {
+        "skillId": 413,
+        "name": "Copy Editing"
+    },
+    {
+        "skillId": 414,
+        "name": "Proofreading"
+    },
+    {
+        "skillId": 415,
+        "name": "SEO Writing"
+    },
+    {
+        "skillId": 416,
+        "name": "Research Summarization"
+    },
+    {
+        "skillId": 417,
+        "name": "Community Building"
+    },
+    {
+        "skillId": 418,
+        "name": "Nonprofit Volunteering"
+    },
+    {
+        "skillId": 419,
+        "name": "Sustainability Projects"
+    },
+    {
+        "skillId": 420,
+        "name": "Climate Change Awareness"
+    },
+    {
+        "skillId": 421,
+        "name": "Waste Reduction"
+    },
+    {
+        "skillId": 422,
+        "name": "Sustainable Living"
+    },
+    {
+        "skillId": 423,
+        "name": "Public Campaigning"
+    },
+    {
+        "skillId": 424,
+        "name": "Basic Law Awareness"
+    },
+    {
+        "skillId": 425,
+        "name": "Civic Education"
+    },
+    {
+        "skillId": 426,
+        "name": "Financial Independence"
+    },
+    {
+        "skillId": 427,
+        "name": "Home Budgeting"
+    },
+    {
+        "skillId": 428,
+        "name": "Cooking Indian Cuisine"
+    },
+    {
+        "skillId": 429,
+        "name": "Cooking Italian Cuisine"
+    },
+    {
+        "skillId": 430,
+        "name": "Cooking Chinese Cuisine"
+    },
+    {
+        "skillId": 431,
+        "name": "Dessert Making"
+    },
+    {
+        "skillId": 432,
+        "name": "Cake Decorating"
+    },
+    {
+        "skillId": 433,
+        "name": "Art Therapy"
+    },
+    {
+        "skillId": 434,
+        "name": "Music Therapy"
+    },
+    {
+        "skillId": 435,
+        "name": "Meditation for Focus"
+    },
+    {
+        "skillId": 436,
+        "name": "Breathing Techniques"
+    },
+    {
+        "skillId": 437,
+        "name": "Mental Wellness Coaching"
+    },
+    {
+        "skillId": 438,
+        "name": "Positive Thinking"
+    },
+    {
+        "skillId": 439,
+        "name": "Happiness Skills"
+    },
+    {
+        "skillId": 440,
+        "name": "Goal Tracking"
+    },
+    {
+        "skillId": 441,
+        "name": "Life Coaching"
+    },
+    {
+        "skillId": 442,
+        "name": "Productivity Management"
+    },
+    {
+        "skillId": 443,
+        "name": "Minimalism"
+    },
+    {
+        "skillId": 444,
+        "name": "Journaling"
+    },
+    {
+        "skillId": 445,
+        "name": "Personal Finance Management"
+    }
+]
