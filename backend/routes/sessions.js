@@ -1,10 +1,21 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 const auth = require('../middleware/auth');
 const Session = require('../models/Session');
 const User = require('../models/User');
 const Review = require('../models/Review'); // Import Review model
 const { createZoomMeeting, createInstantZoomMeeting } = require('../services/zoomService'); // Import Zoom service
+
+// Helper function to safely convert to ObjectId
+const toObjectId = (value) => {
+  if (!value) return value;
+  if (value instanceof mongoose.Types.ObjectId) return value;
+  if (typeof value === 'string' && mongoose.Types.ObjectId.isValid(value)) {
+    return new mongoose.Types.ObjectId(value);
+  }
+  return value;
+};
 
 // Helper function for Streak Logic
 const updateStreak = async (userId) => {
@@ -24,16 +35,27 @@ const updateStreak = async (userId) => {
       lastCompletion.setHours(0, 0, 0, 0);
     }
     
+    let newStreak;
     if (lastCompletion && lastCompletion.getTime() === today.getTime()) {
-      return; 
+      return; // Already updated today, no need to update
     } else if (lastCompletion && lastCompletion.getTime() === yesterday.getTime()) {
-      user.currentStreak += 1;
+      newStreak = (user.currentStreak || 0) + 1;
     } else {
-      user.currentStreak = 1;
+      newStreak = 1;
     }
     
-    user.lastSessionCompleted = new Date();
-    await user.save();
+    // Use findByIdAndUpdate to only update specific fields without triggering full document validation
+    // This avoids issues with availability field data inconsistency
+    await User.findByIdAndUpdate(
+      userId,
+      {
+        $set: {
+          currentStreak: newStreak,
+          lastSessionCompleted: new Date()
+        }
+      },
+      { runValidators: false } // Skip validation to avoid availability field issues
+    );
     
   } catch (err) {
     console.error(`Error updating streak for user ${userId}:`, err.message);
@@ -224,6 +246,15 @@ router.post('/reviews', auth, async (req, res) => {
   const reviewerId = req.user.id;
 
   try {
+    // Validate rating is provided and is valid
+    if (!rating || rating === 0) {
+      return res.status(400).json({ msg: 'Rating is required' });
+    }
+    const ratingNum = Number(rating);
+    if (isNaN(ratingNum) || ratingNum < 1 || ratingNum > 5) {
+      return res.status(400).json({ msg: 'Rating must be a number between 1 and 5' });
+    }
+
     // Check if session exists and is completed
     const session = await Session.findById(sessionId);
     if (!session || session.status !== 'completed') {
@@ -245,18 +276,94 @@ router.post('/reviews', auth, async (req, res) => {
       return res.status(400).json({ msg: 'Cannot review yourself' });
     }
 
-    // Check if review already exists for this session by this reviewer
-    let existingReview = await Review.findOne({ sessionId, reviewerId });
-    if (existingReview) {
-      return res.status(400).json({ msg: 'You have already reviewed this session' });
-    }
-
-    const newReview = new Review({
+    // First check session review flags (more reliable)
+    const isTeacher = reviewerId === session.teacher.toString();
+    const isLearner = reviewerId === session.learner.toString();
+    
+    // Debug logging
+    console.log('Review check:', {
       sessionId,
       reviewerId,
-      revieweeId,
-      rating,
-      comment,
+      isTeacher,
+      isLearner,
+      teacherReviewed: session.teacherReviewed,
+      learnerReviewed: session.learnerReviewed,
+      teacherId: session.teacher.toString(),
+      learnerId: session.learner.toString()
+    });
+    
+    // Check session review flags - use strict check and handle null/undefined
+    const teacherReviewed = session.teacherReviewed === true || session.teacherReviewed === 'true';
+    const learnerReviewed = session.learnerReviewed === true || session.learnerReviewed === 'true';
+    
+    // First check Review collection to see if review actually exists
+    // Use helper function to safely convert to ObjectIds
+    let existingReview = null;
+    try {
+      const sessionObjectId = toObjectId(sessionId);
+      const reviewerObjectId = toObjectId(reviewerId);
+      
+      existingReview = await Review.findOne({ 
+        sessionId: sessionObjectId,
+        reviewerId: reviewerObjectId
+      });
+      
+      // Debug: Log the query and results
+      console.log('Review query:', {
+        sessionId: sessionId,
+        reviewerId: reviewerId,
+        sessionIdType: typeof sessionId,
+        reviewerIdType: typeof reviewerId,
+        foundReview: !!existingReview,
+        reviewId: existingReview?._id
+      });
+    } catch (queryError) {
+      console.error('Error querying for existing review:', queryError);
+      // If ObjectId conversion fails, try without conversion
+      existingReview = await Review.findOne({ 
+        sessionId: sessionId,
+        reviewerId: reviewerId
+      });
+    }
+    
+    // If review exists in database, update flags if needed and block
+    if (existingReview) {
+      console.log('Found existing review in database:', existingReview._id);
+      // If review exists in collection but flags aren't set, update the flags
+      if (isTeacher && !session.teacherReviewed) {
+        session.teacherReviewed = true;
+        await session.save();
+        console.log('Updated teacherReviewed flag to true');
+      }
+      if (isLearner && !session.learnerReviewed) {
+        session.learnerReviewed = true;
+        await session.save();
+        console.log('Updated learnerReviewed flag to true');
+      }
+      return res.status(400).json({ msg: 'You have already reviewed this session' });
+    }
+    
+    // If flags are set but no review exists, reset the flags (data inconsistency fix)
+    if (isTeacher && teacherReviewed) {
+      console.log('Warning: teacherReviewed flag is true but no review found. Resetting flag.');
+      session.teacherReviewed = false;
+      await session.save();
+    }
+    if (isLearner && learnerReviewed) {
+      console.log('Warning: learnerReviewed flag is true but no review found. Resetting flag.');
+      session.learnerReviewed = false;
+      await session.save();
+    }
+    
+    console.log('No existing review found, proceeding with new review');
+
+    // Ensure all IDs are properly formatted as ObjectIds using helper function
+    const newReview = new Review({
+      sessionId: toObjectId(sessionId),
+      reviewerId: toObjectId(reviewerId),
+      revieweeId: toObjectId(revieweeId),
+      rating: ratingNum,
+      comment: comment || '',
     });
 
     await newReview.save();
@@ -270,21 +377,36 @@ router.post('/reviews', auth, async (req, res) => {
     await session.save();
 
     // Update reviewee's average rating and total ratings
-    const revieweeUser = await User.findById(revieweeId);
+    const revieweeUser = await User.findById(toObjectId(revieweeId));
     if (revieweeUser) {
-      const totalRatings = revieweeUser.totalRatings + 1;
-      const newAverageRating = 
-        ((revieweeUser.averageRating * revieweeUser.totalRatings) + rating) / totalRatings;
+      const currentTotalRatings = revieweeUser.totalRatings || 0;
+      const currentAverageRating = revieweeUser.averageRating || 0;
+      const totalRatings = currentTotalRatings + 1;
       
-      revieweeUser.averageRating = newAverageRating;
-      revieweeUser.totalRatings = totalRatings;
-      await revieweeUser.save();
+      // Calculate new average: (currentAverage * currentTotal + newRating) / newTotal
+      const newAverageRating = currentTotalRatings === 0 
+        ? ratingNum 
+        : ((currentAverageRating * currentTotalRatings) + ratingNum) / totalRatings;
+      
+      // Use findByIdAndUpdate to only update specific fields without triggering full document validation
+      // This avoids issues with availability field data inconsistency
+      await User.findByIdAndUpdate(
+        toObjectId(revieweeId),
+        {
+          $set: {
+            averageRating: newAverageRating,
+            totalRatings: totalRatings
+          }
+        },
+        { runValidators: false } // Skip validation to avoid availability field issues
+      );
     }
 
     res.json(newReview);
   } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
+    console.error('Error in review submission:', err);
+    console.error('Error stack:', err.stack);
+    res.status(500).json({ msg: err.message || 'Server Error' });
   }
 });
 

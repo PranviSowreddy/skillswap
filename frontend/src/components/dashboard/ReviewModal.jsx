@@ -27,7 +27,7 @@ const ReviewModal = ({ sessionId, revieweeId, onClose, onReviewSubmitted }) => {
         rating,
         comment,
       });
-      onReviewSubmitted();
+      onReviewSubmitted(sessionId);
       onClose();
     } catch (err) {
       console.error('Error submitting review:', err);

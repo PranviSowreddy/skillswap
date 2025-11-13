@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import api from '../../services/api';
-import { Clock, Users, TrendingUp, Award, ChevronLeft, ChevronRight, Video, CheckCircle } from 'lucide-react';
+import { Clock, Users, TrendingUp, Award, ChevronLeft, ChevronRight, Video, CheckCircle, Star } from 'lucide-react';
 import ReviewModal from './ReviewModal';
 
 const StatCard = ({ icon, label, value, change, bgColor, iconColor }) => (
@@ -43,12 +43,15 @@ const SessionCalendar = ({ sessions, user }) => {
     leadingDays.push(i);
   }
 
-  // Filter sessions based on active tab
+  // Filter sessions based on active tab - exclude completed sessions
   const filteredSessions = sessions.filter(s => {
+    const isNotCompleted = s.status !== 'completed';
+    const hasScheduledTime = s.scheduledTime && new Date(s.scheduledTime) >= new Date();
+    
     if (activeTab === 'teaching') {
-      return s.teacher._id === user._id && s.status === 'confirmed' && s.scheduledTime;
+      return s.teacher._id === user._id && s.status === 'confirmed' && isNotCompleted && hasScheduledTime;
     } else {
-      return s.learner._id === user._id && s.status === 'confirmed' && s.scheduledTime;
+      return s.learner._id === user._id && s.status === 'confirmed' && isNotCompleted && hasScheduledTime;
     }
   });
 
@@ -65,8 +68,22 @@ const SessionCalendar = ({ sessions, user }) => {
       })
   );
 
-  const teachingCount = sessions.filter(s => s.teacher._id === user._id && s.status === 'confirmed' && s.scheduledTime).length;
-  const learningCount = sessions.filter(s => s.learner._id === user._id && s.status === 'confirmed' && s.scheduledTime).length;
+  // Count only upcoming (not completed) sessions
+  const teachingCount = sessions.filter(s => 
+    s.teacher._id === user._id && 
+    s.status === 'confirmed' && 
+    s.status !== 'completed' && 
+    s.scheduledTime && 
+    new Date(s.scheduledTime) >= new Date()
+  ).length;
+  
+  const learningCount = sessions.filter(s => 
+    s.learner._id === user._id && 
+    s.status === 'confirmed' && 
+    s.status !== 'completed' && 
+    s.scheduledTime && 
+    new Date(s.scheduledTime) >= new Date()
+  ).length;
 
   const handlePrevMonth = () => {
     if (currentMonth === 0) {
@@ -93,56 +110,50 @@ const SessionCalendar = ({ sessions, user }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm">
-      <div className="flex gap-2 mb-4">
-        <button
-          onClick={() => setActiveTab('teaching')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium ${
-            activeTab === 'teaching'
-              ? 'bg-blue-500 text-white'
-              : 'bg-gray-100 text-gray-600'
-          }`}
-        >
-          {teachingCount} Teaching
-        </button>
-        <button
-          onClick={() => setActiveTab('learning')}
-          className={`px-4 py-2 rounded-lg text-sm font-medium ${
-            activeTab === 'learning'
-              ? 'bg-orange-500 text-white'
-              : 'bg-gray-100 text-gray-600'
-          }`}
-        >
-          {learningCount} Learning
-        </button>
-      </div>
-
-      <div className="flex justify-between items-center mb-4">
-        <h3 className="font-bold text-lg text-gray-800">{`${monthName} ${currentYear}`}</h3>
-        <div className="flex gap-1">
-          <button onClick={handlePrevMonth} className="p-1 text-gray-500 hover:text-gray-800">
-            <ChevronLeft size={20} />
+    <div className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-3xl shadow-2xl border border-gray-200/50">
+      {/* Month navigation */}
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-2xl font-bold text-gray-800 capitalize">
+          {monthName} <span className="text-gray-500 font-semibold">{currentYear}</span>
+        </h3>
+        <div className="flex gap-2">
+          <button 
+            onClick={handlePrevMonth} 
+            className="p-2 rounded-lg bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-200"
+            aria-label="Previous month"
+          >
+            <ChevronLeft size={18} />
           </button>
-          <button onClick={handleNextMonth} className="p-1 text-gray-500 hover:text-gray-800">
-            <ChevronRight size={20} />
+          <button 
+            onClick={handleNextMonth} 
+            className="p-2 rounded-lg bg-white text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all duration-200 shadow-sm hover:shadow-md border border-gray-200"
+            aria-label="Next month"
+          >
+            <ChevronRight size={18} />
           </button>
         </div>
       </div>
 
-      <div className="grid grid-cols-7 gap-1 text-xs text-center text-gray-400 mb-2">
-        <div>Su</div>
-        <div>Mo</div>
-        <div>Tu</div>
-        <div>We</div>
-        <div>Th</div>
-        <div>Fr</div>
-        <div>Sa</div>
+      {/* Day labels */}
+      <div className="grid grid-cols-7 gap-2 mb-3">
+        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+          <div 
+            key={day} 
+            className="text-center text-xs font-semibold text-gray-500 uppercase tracking-wide"
+          >
+            {day}
+          </div>
+        ))}
       </div>
 
-      <div className="grid grid-cols-7 gap-1 text-sm">
+      {/* Calendar grid */}
+      <div className="grid grid-cols-7 gap-2 mb-6">
         {/* Previous month days */}
-        {trailingDays.map((day, idx) => (
-          <div key={`prev-${day}`} className="text-center py-1 text-gray-300">
+        {trailingDays.map((day) => (
+          <div 
+            key={`prev-${day}`} 
+            className="aspect-square flex items-center justify-center text-gray-300 text-sm rounded-lg"
+          >
             {day}
           </div>
         ))}
@@ -156,25 +167,59 @@ const SessionCalendar = ({ sessions, user }) => {
           return (
             <div
               key={day}
-              className={`text-center py-1 ${
+              className={`aspect-square flex flex-col items-center justify-center rounded-lg transition-all duration-200 ${
                 isTodayDate
-                  ? 'bg-teal-500 text-white rounded'
+                  ? 'bg-gradient-to-br from-teal-500 to-teal-600 text-white shadow-lg font-bold'
                   : hasSession
-                  ? 'border-b-2 border-blue-500'
-                  : ''
+                  ? 'bg-white hover:bg-gray-50 cursor-pointer'
+                  : 'bg-white hover:bg-gray-50 cursor-pointer'
               }`}
             >
-              {day}
+              <span className={`text-sm font-medium ${isTodayDate ? 'text-white' : 'text-gray-800'}`}>
+                {day}
+              </span>
+              {hasSession && (
+                <span className={`text-xs font-bold mt-0.5 ${isTodayDate ? 'text-white' : 'text-gray-600'}`}>
+                  .
+                </span>
+              )}
             </div>
           );
         })}
 
         {/* Next month days */}
         {leadingDays.map((day) => (
-          <div key={`next-${day}`} className="text-center py-1 text-gray-300">
+          <div 
+            key={`next-${day}`} 
+            className="aspect-square flex items-center justify-center text-gray-300 text-sm rounded-lg"
+          >
             {day}
           </div>
         ))}
+      </div>
+
+      {/* Teaching/Learning tabs below calendar */}
+      <div className="flex items-center justify-center gap-3 pt-4 border-t border-gray-200">
+        <button
+          onClick={() => setActiveTab('teaching')}
+          className={`px-4 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
+            activeTab === 'teaching'
+              ? 'bg-blue-500 text-white shadow-md'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          }`}
+        >
+          Teaching <span className="ml-1 font-bold">{teachingCount}</span>
+        </button>
+        <button
+          onClick={() => setActiveTab('learning')}
+          className={`px-4 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 ${
+            activeTab === 'learning'
+              ? 'bg-orange-500 text-white shadow-md'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          }`}
+        >
+          Learning <span className="ml-1 font-bold">{learningCount}</span>
+        </button>
       </div>
     </div>
   );
@@ -221,11 +266,24 @@ const Dashboard = () => {
         .slice(0, 5);
 
       // Attach review data to recent activities
+      // Check both session review flags and reviews API
       const recentWithReviews = recent.map(session => {
+        const isTeacher = session.teacher._id === user._id;
+        const isLearner = session.learner._id === user._id;
+        
+        // Check if user has reviewed using session flags (more reliable)
+        const hasReviewedFlag = (isTeacher && session.teacherReviewed) || (isLearner && session.learnerReviewed);
+        
+        // Also check reviews API for the actual review object
         const userReview = reviewsRes.data.find(
           review => review.sessionId === session._id && review.reviewerId === user._id
         );
-        return { ...session, userReview };
+        
+        // If session flag says reviewed but no review object found, create a placeholder
+        // This handles cases where flags are set but review data isn't loaded yet
+        const reviewStatus = hasReviewedFlag || userReview ? (userReview || { exists: true }) : null;
+        
+        return { ...session, userReview: reviewStatus };
       });
 
       setUpcomingSessions(upcoming);
@@ -254,9 +312,6 @@ const Dashboard = () => {
     if (window.confirm('Are you sure you want to end this session?')) {
       try {
         await api.put(`/sessions/complete/${session._id}`);
-        setCurrentSessionToReview(session);
-        setRevieweeIdForModal(session.learner._id === user._id ? session.teacher._id : session.learner._id);
-        setShowReviewModal(true);
         fetchData();
       } catch (err) {
         console.error('Error completing session:', err);
@@ -265,11 +320,51 @@ const Dashboard = () => {
     }
   };
 
-  const handleReviewSubmitted = () => {
+  const handleOpenReview = (session) => {
+    // Only learners can review teachers
+    const isLearner = session.learner._id === user._id;
+    const hasReviewed = !!(session.userReview);
+    
+    // Prevent opening modal if already reviewed (defensive check)
+    if (isLearner && !hasReviewed) {
+      setCurrentSessionToReview(session);
+      setRevieweeIdForModal(session.teacher._id);
+      setShowReviewModal(true);
+    }
+    // If already reviewed, do nothing (button should be disabled anyway)
+  };
+
+  const handleReviewSubmitted = async (submittedSessionId) => {
     setShowReviewModal(false);
     setCurrentSessionToReview(null);
     setRevieweeIdForModal(null);
-    fetchData();
+    
+    // Immediately update local state to mark session as reviewed (optimistic update)
+    if (submittedSessionId) {
+      setRecentActivity(prev => 
+        prev.map(session => {
+          if (session._id === submittedSessionId) {
+            // Mark as reviewed by adding a placeholder review object that matches API structure
+            return { 
+              ...session, 
+              userReview: { 
+                _id: 'temp-review-id', // Temporary ID
+                sessionId: submittedSessionId, 
+                reviewerId: user._id,
+                revieweeId: session.teacher._id,
+                rating: 0, // Will be updated when fetchData completes
+                comment: '',
+                date: new Date()
+              } 
+            };
+          }
+          return session;
+        })
+      );
+    }
+    
+    // Then refresh data from server to get the actual review
+    await fetchData();
   };
 
   const formatDate = (dateString) => {
@@ -428,11 +523,15 @@ const Dashboard = () => {
                 ) : (
                   recentActivity.map(activity => {
                     const isTeaching = activity.teacher._id === user._id;
+                    const isLearner = activity.learner._id === user._id;
                     const otherUser = isTeaching ? activity.learner : activity.teacher;
                     const otherUserInitial = getInitials(otherUser.username);
+                    // Check if user has reviewed - check if userReview object exists
+                    const hasReviewed = !!(activity.userReview);
+                    const canReview = isLearner && !hasReviewed;
 
                     return (
-                      <div key={activity._id} className="flex items-center justify-between p-4 rounded-lg">
+                      <div key={activity._id} className="flex items-center justify-between p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
                         <div className="flex items-center gap-4 flex-1">
                           <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center font-bold text-blue-600 text-lg">
                             {otherUserInitial}
@@ -456,6 +555,29 @@ const Dashboard = () => {
                           <span className="px-3 py-1 text-xs font-medium rounded-full bg-green-100 text-green-700">
                             Completed
                           </span>
+                          {/* Review Button - Only for learners */}
+                          {isLearner && (
+                            <button
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                // Only open review modal if not already reviewed
+                                if (!hasReviewed) {
+                                  handleOpenReview(activity);
+                                }
+                              }}
+                              disabled={hasReviewed}
+                              className={`px-3 py-1.5 text-xs font-semibold rounded-lg shadow-sm transition-all duration-200 flex items-center gap-1.5 ${
+                                hasReviewed
+                                  ? 'bg-gray-200 text-gray-500 cursor-not-allowed opacity-60'
+                                  : 'bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white hover:shadow-md cursor-pointer'
+                              }`}
+                              title={hasReviewed ? 'You have already reviewed this teacher' : 'Review this teacher'}
+                            >
+                              <Star size={14} fill={hasReviewed ? "currentColor" : "none"} />
+                              <span>{hasReviewed ? 'Reviewed' : 'Review'}</span>
+                            </button>
+                          )}
                         </div>
                       </div>
                     );
